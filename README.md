@@ -10,3 +10,6 @@ The fixed default PIN is 0000 by owner request. This is a convenience lock, not 
 
 ## Verification
 `node --test ledger.test.cjs` (Node 18+). Manual HTTPS browser and physical iPhone acceptance remain required.
+
+## v0.3
+Native-inspired keypad, tab navigation, transaction presets, charts, themes and settings. The Home Screen app uses Safari/WebKit and is not a native iOS binary. Existing local vault format remains compatible.

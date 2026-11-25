@@ -7,8 +7,8 @@
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#0b1311",
-  "theme_color": "#101b18",
+  "background_color": "#0b1010",
+  "theme_color": "#0b1010",
   "icons": [
     {
       "src": "icon.png",
@@ -25,6 +25,14 @@
     {
       "name": "تسجيل عملية",
       "url": "./#add"
+    },
+    {
+      "name": "الرئيسية",
+      "url": "./"
     }
+  ],
+  "description": "متابعة الدخل والمصروفات والحسابات",
+  "display_override": [
+    "standalone"
   ]
 }
