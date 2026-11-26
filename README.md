@@ -19,3 +19,6 @@ No account setup needed. Record payments, income, or neutral cash withdrawals/tr
 
 ## v1.1-preview
 Use #smart for dictation or typed multi-entry capture; review before saving. Receipt text can be copied from iOS Live Text; image extraction requires browser TextDetector and may be unavailable. Planning estimates exclude expected receipts and include obligations. CSV and print are local. Backups can be transferred through Files/iCloud manually; no live synchronization. No external AI service is used.
+
+## v1.1 RC optional backend
+See [server setup](server/README.md) for a self-hosted encrypted snapshot sync service and optional Tesseract OCR. The static PWA continues to work without the server. Remote sync and OCR require deployment/configuration and device verification.

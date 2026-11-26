@@ -1,0 +1,9 @@
+# Optional self-hosted sync and OCR
+Static GitHub Pages remains usable without this service. This service is not deployed by this commit.
+
+1. Install Node.js 22+ on your private server. For optional OCR install tesseract-ocr, tesseract-ocr-ara and tesseract-ocr-eng.
+2. Set WALLET_SYNC_TOKEN to at least 32 random characters (generate locally); WALLET_ALLOWED_ORIGINS to the exact HTTPS origin(s), e.g. https://abudoxali.github.io (no path); WALLET_VAULT_FILE to an absolute path outside the webroot, mode 0700 directory. Optional WALLET_ENABLE_OCR=1.
+3. Run node server/sync.mjs under a restricted service account. Default listen is 127.0.0.1:8787. Terminate TLS in a reverse proxy and expose only /v1/vault, /v1/ocr and /health to the intended HTTPS host; configure upload size and request timeout limits. Do not log authorization headers or bodies. Never commit tokens or backups.
+4. In the app settings provide your HTTPS service URL, token, and a unique strong synchronization passphrase (12+ characters; NOT 0000). Keep the same secret on both devices. Neither the passphrase nor plaintext financial data is sent to the server during sync. The server stores one encrypted snapshot with optimistic revision checks. Upload/download are explicitly initiated, not automatic merge. Download replaces the local snapshot after confirmation and stores one previous local copy for export.
+5. OCR is opt-in per photo. If browser TextDetector is absent and the sync service is configured and enabled, the app may send the image to YOUR server with confirmation; Tesseract processes it in memory. Review extracted amount before saving. No external AI provider is connected.
+6. Back up the encrypted server file, and test restore. The local PIN 0000 remains a convenience lock. Never treat it as strong protection.

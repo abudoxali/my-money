@@ -1,0 +1,6 @@
+private/
+.env
+.env.*
+*.vault.json
+abud-wallet-*.json
+node_modules/
