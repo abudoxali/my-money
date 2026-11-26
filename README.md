@@ -13,3 +13,6 @@ The fixed default PIN is 0000 by owner request. This is a convenience lock, not 
 
 ## v0.3
 Native-inspired keypad, tab navigation, transaction presets, charts, themes and settings. The Home Screen app uses Safari/WebKit and is not a native iOS binary. Existing local vault format remains compatible.
+
+## v0.5 transaction-first workflow
+No account setup needed. Record payments, income, or neutral cash withdrawals/transfers. Track source/destination, category, payment method, personal/business scope. Recurring payment schedules are manually marked paid; no actual payment is made. Existing account records and opening balances remain in the ledger for compatibility.
