@@ -29,3 +29,7 @@ Follow-up verification: app.js, ledger.js and sw.js parsed successfully in the a
 2026-11-26 — added optimistic local-vault write check, regression tests for encrypted sync and HTTP auth/revisions, and Playwright mobile viewport workflow. CI execution must be confirmed separately; no physical device acceptance. Existing ledger test files re-executed using an authoring runtime assertion harness: 5 tests / 32 assertions passed before this commit.
 
 2026-11-26 — v1.2 focused wallet: reduced visible UI to balance, entries, subscriptions/debts, spending cap and source/category reports. Optional 40% suggested monthly cap, fixed user-approved cap, 80% warning, due reserves and daily remainder. Prior data schema preserved; advanced AI/OCR/sync UI hidden, not deleted from ledger. 18 runtime checks passed; browser CI pending.
+
+2026-11-26 — v1.2 CI and Pages confirmed successful (runs 45733116173 and 45733114668).
+
+2026-11-26 — v1.3 iPhone local-only: retained original encrypted localStorage key and schema, removed all active sync/OCR handlers and script loading, restricted network CSP to same origin, added native Apple 180px and 512px icons, standalone/keyboard/safe-area refinements, local persistence request and status, offline/update status, backup restore from settings, and direct #add entry. New Chromium/WebKit offline reload/persistence CI added. No physical iPhone acceptance; OS can evict storage; Safari and installed app may have separate stores. PIN 0000 remains convenience-only. CI status pending at commit time.

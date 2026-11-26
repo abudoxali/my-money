@@ -17,5 +17,6 @@ jobs:
       - run: node --check app.js && node --check sync.js && node --check ledger.js && node --check sw.js && node --check server/sync.mjs
       - run: node --test *.test.cjs server/*.test.mjs
       - run: npm install --no-save --no-package-lock playwright
-      - run: npx playwright install --with-deps chromium
+      - run: npx playwright install --with-deps chromium webkit
       - run: node tests/browser.mjs
+      - run: BROWSER=webkit node tests/browser.mjs

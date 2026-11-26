@@ -17,3 +17,17 @@ textarea{font:inherit;font-size:16px;resize:vertical;background:var(--field);col
 @media print{body{background:#fff!important;color:#111!important}#app{padding:0;max-width:none}.nav,.appheader button,button,form,.toast,.offline{display:none!important}.panel{break-inside:avoid;box-shadow:none;background:#fff!important;color:#111!important;border:1px solid #ddd}.muted,small{color:#444!important}.metric{color:#111!important}.page{animation:none}.hero{background:#eee!important;color:#111!important}}
 
 /* Focused wallet 1.2 */.simplehero{min-height:175px}.limitcard{display:grid;gap:12px}.limitstatus{font-size:11px;padding:6px 9px;border-radius:10px;background:var(--soft);color:var(--muted);white-space:nowrap}.limitstatus.ok{color:var(--mint)}.limitstatus.near{color:#d6a744}.limitstatus.over,.limitstatus.full{color:var(--red)}.limitnumber{font-size:30px;font-weight:800;letter-spacing:-.7px}.limitcard .progress{height:12px}.budgetnote{display:grid;gap:8px;background:var(--field);padding:12px;border-radius:14px}.budgetnote>div{display:flex;align-items:center;justify-content:space-between;gap:8px}.budgetnote b{font-size:13px}.optional summary{cursor:pointer;padding:12px 0;font-weight:650;color:var(--muted);list-style:none}.optional summary:after{content:"+";float:left}.optional[open] summary:after{content:"−"}.optional>label{margin-top:8px}.checkline{display:flex;align-items:center;gap:10px;font-size:13px}.checkline input{width:21px;min-height:21px;accent-color:#26824f}.page>.panel>.textbutton{margin-top:8px}.page>.panel>button+button{margin-top:8px}.limitcard .between small{overflow-wrap:anywhere}.pagelead .large-title{font-size:29px}.quickactions button{min-height:78px}.panel{box-shadow:none}.hero strong{margin:12px 0}@media(min-width:700px){.page{max-width:680px;margin:auto}}
+
+/* iPhone home-screen refinement */
+html,body{overscroll-behavior-y:none;min-height:100%;-webkit-text-size-adjust:100%}
+#app{padding-top:max(16px,env(safe-area-inset-top));padding-right:max(16px,env(safe-area-inset-right));padding-left:max(16px,env(safe-area-inset-left));padding-bottom:calc(100px + env(safe-area-inset-bottom))}
+html[data-standalone=yes] #app{padding-top:calc(12px + env(safe-area-inset-top))}
+button,input,select,textarea{font-size:16px}
+button{touch-action:manipulation;-webkit-user-select:none;user-select:none}
+input,textarea{user-select:text;-webkit-user-select:text}
+.amountinput input{font-size:43px}.keypad button{font-size:29px}
+.nav button{min-height:52px;font-size:11px}.nav button span{height:28px}.nav{padding-bottom:calc(6px + env(safe-area-inset-bottom))}
+html[data-keyboard=open] .nav{display:none}html[data-keyboard=open] #app{padding-bottom:20px}
+.entrypanel select,.entrypanel input:not([type=hidden]),.entrypanel textarea{min-height:49px}
+.restore-inline{margin-top:14px;padding:12px;border:1px solid var(--line);border-radius:14px}.restore-inline input{font-size:14px}
+@media(max-height:520px) and (orientation:landscape){.auth{margin:0 auto}.authbrand img{width:48px;height:48px}.keypad button{width:48px;height:48px;font-size:21px}.keypad{gap:7px}.auth{gap:12px}}

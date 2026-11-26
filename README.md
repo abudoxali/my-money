@@ -1,27 +1,17 @@
-# ABUD Wallet | محفظة عابد
+# محفظة عابد — ABUD Wallet
 
-Arabic-first finance PWA. EGP, income, expenses, transfers, budgets, savings goals and deterministic insights. No external API, analytics or database. Data is encrypted at rest in browser localStorage with AES-GCM and PBKDF2-SHA256 (600,000 iterations). This is not a bank or payment service.
+Personal iPhone-first, Arabic RTL, local-only web app. GitHub Pages serves the application files; the wallet never sends financial data to a server. PIN 0000 is a convenience lock, not strong security. All existing ledger records, budgets, subscriptions and debts remain compatible with the same encrypted localStorage key.
 
-## Run
-Serve this directory over HTTPS, or on a desktop using `python -m http.server 8000` and http://localhost:8000. GitHub Pages: Settings → Pages → Deploy from a branch → main / root. The app requires a secure context. On iPhone open the HTTPS site in Safari → Share → Add to Home Screen. Shortcuts: create Open URLs action pointing to the app URL with #add; this opens quick entry, not background API capture.
+## iPhone installation
+1. Open https://abudoxali.github.io/my-money/ in Safari (not private browsing).
+2. If you already entered records in Safari, export a backup before installation.
+3. Share → Add to Home Screen → enable Open as Web App → Add.
+4. Open the icon, enter 0000. If necessary, restore the Safari backup from Files on the login screen or Settings.
+5. Open Settings and confirm offline readiness; optionally request persistent storage. The operating system decides whether to grant persistence.
+6. Use the installed icon consistently. Safari tabs and Home Screen apps can have separate storage. Keep periodic backups in Files; deletion of the app or site data, device loss or OS eviction can remove local records.
 
-## Privacy
-The fixed default PIN is 0000 by owner request. This is a convenience lock, not strong security: anyone who obtains the encrypted vault can decrypt it using the publicly known PIN. Legacy vaults migrate after successful unlock. Restored backups are re-encrypted with the default PIN. Data remains on the specific browser/origin; installed iOS PWA may use separate storage from Safari. Export encrypted backups and test restoring before relying on it. Do not commit personal records. No cross-device sync or server authentication yet. Avoid simultaneously editing from multiple tabs. Device compromise, malicious code updates and unlocked sessions are outside the protection of local encryption. No financial data is seeded.
+## Scope
+Balance, income, expenses, neutral transfers, dated subscriptions/debts, fixed monthly spending cap, due reserves and local category/source reports. No account setup, remote sync, OCR, analytics tracking, or API required. Older optional server/sync source remains in Git history/repository but is not loaded or reachable from this app UI. The restrictive CSP permits no external connections.
 
 ## Verification
-`node --test ledger.test.cjs` (Node 18+). Manual HTTPS browser and physical iPhone acceptance remain required.
-
-## v0.3
-Native-inspired keypad, tab navigation, transaction presets, charts, themes and settings. The Home Screen app uses Safari/WebKit and is not a native iOS binary. Existing local vault format remains compatible.
-
-## v0.5 transaction-first workflow
-No account setup needed. Record payments, income, or neutral cash withdrawals/transfers. Track source/destination, category, payment method, personal/business scope. Recurring payment schedules are manually marked paid; no actual payment is made. Existing account records and opening balances remain in the ledger for compatibility.
-
-## v1.1-preview
-Use #smart for dictation or typed multi-entry capture; review before saving. Receipt text can be copied from iOS Live Text; image extraction requires browser TextDetector and may be unavailable. Planning estimates exclude expected receipts and include obligations. CSV and print are local. Backups can be transferred through Files/iCloud manually; no live synchronization. No external AI service is used.
-
-## v1.1 RC optional backend
-See [server setup](server/README.md) for a self-hosted encrypted snapshot sync service and optional Tesseract OCR. The static PWA continues to work without the server. Remote sync and OCR require deployment/configuration and device verification.
-
-## v1.2 focused experience
-Set opening cash, record movements, set a monthly spending cap in الحسبة, and manage subscriptions/debts in الالتزامات. 40% of current balance is a suggestion only; saved caps do not auto-increase. Advanced tools are hidden from navigation; historical records remain intact.
+GitHub Actions runs ledger regression and mobile Chromium/WebKit tests, including offline reload and persistence. These are emulated viewport/desktop browser engine tests, not real iOS hardware acceptance. Run locally with `python3 -m http.server 8765`.
