@@ -16,3 +16,6 @@ Native-inspired keypad, tab navigation, transaction presets, charts, themes and 
 
 ## v0.5 transaction-first workflow
 No account setup needed. Record payments, income, or neutral cash withdrawals/transfers. Track source/destination, category, payment method, personal/business scope. Recurring payment schedules are manually marked paid; no actual payment is made. Existing account records and opening balances remain in the ledger for compatibility.
+
+## v1.1-preview
+Use #smart for dictation or typed multi-entry capture; review before saving. Receipt text can be copied from iOS Live Text; image extraction requires browser TextDetector and may be unavailable. Planning estimates exclude expected receipts and include obligations. CSV and print are local. Backups can be transferred through Files/iCloud manually; no live synchronization. No external AI service is used.
