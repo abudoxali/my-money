@@ -22,3 +22,6 @@ Use #smart for dictation or typed multi-entry capture; review before saving. Rec
 
 ## v1.1 RC optional backend
 See [server setup](server/README.md) for a self-hosted encrypted snapshot sync service and optional Tesseract OCR. The static PWA continues to work without the server. Remote sync and OCR require deployment/configuration and device verification.
+
+## v1.2 focused experience
+Set opening cash, record movements, set a monthly spending cap in الحسبة, and manage subscriptions/debts in الالتزامات. 40% of current balance is a suggestion only; saved caps do not auto-increase. Advanced tools are hidden from navigation; historical records remain intact.

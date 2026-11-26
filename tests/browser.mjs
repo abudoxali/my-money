@@ -16,9 +16,8 @@ try{
  await page.locator("#tx button[type=submit]").click();await page.locator("#results").waitFor();assert.match(await page.locator("#results").innerText(),/Client A/);
  await page.locator('nav [data-view="add"]').click();await page.locator('[data-action="kind"][data-id="expense"]').click();
  await page.locator('[name="amount"]').fill("150");await page.locator('[name="title"]').fill("Lunch");await page.locator('#tx button[type=submit]').click();await page.locator("#results").waitFor();assert.match(await page.locator("#results").innerText(),/Lunch/);
- await page.locator('nav [data-view="add"]').click();await page.locator('[data-view="smart"]').click();await page.locator('#smartText').fill("دفعت 300 مواصلات واستلمت 700 من عميل");await page.locator('#smartParse button[type=submit],#smartParse button.primary').click();await page.locator('#smartSave').waitFor();assert.equal(await page.locator(".draft").count(),2);await page.locator("#smartSave button.primary").click();await page.locator("#results").waitFor();
- await page.locator('nav [data-view="reports"]').click();await page.locator("#planning").waitFor();
+ await page.locator('nav [data-view="reports"]').click();await page.locator("#simpleLimit").waitFor();await page.locator("#simpleLimit [name=amount]").fill("8000");await page.locator("#simpleLimit button.primary").click();await page.locator(".limitnumber").waitFor();assert.match(await page.locator(".limitcard").innerText(),/متبقي من الحد/);
  assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
  await page.reload();for(let i=0;i<4;i++)await page.locator('[data-action="pin"][data-id="0"]').click();await page.locator('nav [data-view="history"]').click();assert.match(await page.locator("#results").innerText(),/Client A/);assert.match(await page.locator("#results").innerText(),/Lunch/);
- assert.deepEqual(errors,[]);console.log("PASS mobile browser: PIN, income, expense, batch capture, reports, reload persistence, no page errors");
+ assert.deepEqual(errors,[]);console.log("PASS mobile browser: PIN, income, expense, budget, reports, reload persistence, no page errors");
 }finally{await browser?.close();server.kill()}
